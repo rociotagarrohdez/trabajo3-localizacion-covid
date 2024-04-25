@@ -1,9 +1,7 @@
 package com.practica.genericas;
 
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Locale;
 
 public class FechaHora implements Comparable<FechaHora>{
 	public class Fecha {
@@ -20,25 +18,16 @@ public class FechaHora implements Comparable<FechaHora>{
 			return dia;
 		}
 
-		public void setDia(int dia) {
-			this.dia = dia;
-		}
 
 		public int getMes() {
 			return mes;
 		}
 
-		public void setMes(int mes) {
-			this.mes = mes;
-		}
 
 		public int getAnio() {
 			return anio;
 		}
 
-		public void setAnio(int anio) {
-			this.anio = anio;
-		}
 
 		@Override
 		public String toString() {
@@ -63,17 +52,11 @@ public class FechaHora implements Comparable<FechaHora>{
 			return hora;
 		}
 
-		public void setHora(int hora) {
-			this.hora = hora;
-		}
 
 		public int getMinuto() {
 			return minuto;
 		}
 
-		public void setMinuto(int minuto) {
-			this.minuto = minuto;
-		}
 
 		@Override
 		public String toString() {
@@ -101,17 +84,11 @@ public class FechaHora implements Comparable<FechaHora>{
 		return fecha;
 	}
 
-	public void setFecha(Fecha fecha) {
-		this.fecha = fecha;
-	}
 
 	public Hora getHora() {
 		return hora;
 	}
 
-	public void setHora(Hora hora) {
-		this.hora = hora;
-	}
 
 	@Override
 	public int hashCode() {
@@ -130,11 +107,8 @@ public class FechaHora implements Comparable<FechaHora>{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		FechaHora fecha = (FechaHora) obj;
-		return getFecha().getDia() == fecha.getFecha().getDia() && getFecha().getMes() == fecha.getFecha().getMes()
-				&& getFecha().getAnio() == fecha.getFecha().getAnio()
-				&& getHora().getHora() == fecha.getHora().getHora()
-				&& getHora().getMinuto() == fecha.getHora().getMinuto();
+		FechaHora other = (FechaHora) obj;
+		return fecha.equals(other.fecha) &&  hora.equals(other.hora);
 	}
 
 	@Override
